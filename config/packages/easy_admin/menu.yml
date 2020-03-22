@@ -1,8 +1,8 @@
 easy_admin:
     design:
         menu:
-            - User
-            - Department
-            - Event
-            - Edition
+            - { entity: 'User', icon: 'user'}
+            - { entity: 'Department', icon: 'briefcase'}
+            - { entity: 'Event', icon: 'users'}
+            - { entity: 'Edition', icon: 'calendar-o'}
             - { label: 'Inicio', icon: 'home', url: '/', rel: 'index' }

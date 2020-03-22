@@ -8,3 +8,4 @@ easy_admin:
                     - 'username'
                     - { property: 'password', type: 'password' }
                     - { property: 'roles', type: 'collection' }
+                    - 'activated'

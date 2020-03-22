@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,7 +31,7 @@ class Edition
     private $department;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
@@ -87,6 +89,16 @@ class Edition
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $return_date;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="editions")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -259,5 +271,36 @@ class Edition
         $this->return_date = $return_date;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->contains($user)) {
+            $this->users->removeElement($user);
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getEvent()->getName().' - '.$this->getDepartment()->getName().' - '.$this->getDate()->format('Y-m-d H:i:s');;
     }
 }

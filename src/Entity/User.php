@@ -5,10 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface
 {
@@ -40,9 +42,20 @@ class User implements UserInterface
      */
     private $events;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Edition", mappedBy="users")
+     */
+    private $editions;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $activated;
+
     public function __construct()
     {
         $this->events = new ArrayCollection();
+        $this->editions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -147,6 +160,51 @@ class User implements UserInterface
                 $event->setUserDirector(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Edition[]
+     */
+    public function getEditions(): Collection
+    {
+        return $this->editions;
+    }
+
+    public function addEdition(Edition $edition): self
+    {
+        if (!$this->editions->contains($edition)) {
+            $this->editions[] = $edition;
+            $edition->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEdition(Edition $edition): self
+    {
+        if ($this->editions->contains($edition)) {
+            $this->editions->removeElement($edition);
+            $edition->removeUser($this);
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getUsername();
+    }
+
+    public function getActivated(): ?bool
+    {
+        return $this->activated;
+    }
+
+    public function setActivated(bool $activated): self
+    {
+        $this->activated = $activated;
 
         return $this;
     }
