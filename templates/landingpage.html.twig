@@ -3,123 +3,98 @@
 {% block title %}Almacen landing page{% endblock %}
 
 {% block body %}
-<div class="container bg-light">
-    <header class="row bg-light justify-content-center align-items-center">
-        <div class="col col-md-1">LOGO</div>
-        <div class="col col-md-9">Informacion general empresa Informacion general empresa Informacion general empresa Informacion general empresa Informacion general empresa Informacion general empresa Informacion general empresa Informacion general empresa </div>
-        <div class="col col-md-1">
-            <a class="btn btn-primary" href="/login">Login</a>
-        </div>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Departamentos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Eventos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Stock</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="row bg-info text-white">
-        <p>Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa 
-        Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa </p>
-    </div>
-    <div class="row justify-content-center pt-3">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('images/firstSlide.svg') }}" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Primera imagen</h5>
-                        <p>Descripción carrusel</p>
-                    </div>
+<div class="row bg-info text-white">
+    <p>Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa 
+    Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa Descripción empresa </p>
+</div>
+<div class="row justify-content-center pt-3">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('images/firstSlide.svg') }}" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Primera imagen</h5>
+                    <p>Descripción carrusel</p>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('images/secondSlide.svg') }}" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Segunda imagen</h5>
-                        <p>Descripción carrusel</p>
-                    </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/secondSlide.svg') }}" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Segunda imagen</h5>
+                    <p>Descripción carrusel</p>
                 </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('images/thirdSlide.svg') }}" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Tercera imagen</h5>
-                        <p>Descripción carrusel</p>
-                    </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('images/thirdSlide.svg') }}" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Tercera imagen</h5>
+                    <p>Descripción carrusel</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row justify-content-center pt-3">
-        <div class="card col">
-          <img class="card-img-top" src="{{ asset('images/card.svg') }}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Departamento 1</h5>
-            <p class="card-text">Descripción carta</p>
-            <a href="#" class="btn btn-primary">Ir</a>
-          </div>
-        </div>
-        <div class="card col">
-          <img class="card-img-top" src="{{ asset('images/card.svg') }}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Departamento 2</h5>
-            <p class="card-text">Descripción carta</p>
-            <a href="#" class="btn btn-primary">Ir</a>
-          </div>
-        </div>
-        <div class="card col">
-          <img class="card-img-top" src="{{ asset('images/card.svg') }}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Departamento 3</h5>
-            <p class="card-text">Descripción carta</p>
-            <a href="#" class="btn btn-primary">Ir</a>
-          </div>
-        </div>
-    </div>
-    <div class="row pt-3">
-        <div class="col bg-secondary text-white">
-            <h4>Nuestros clientes piensan</h4>
-        </div>
-        <div class="col bg-white">
-            <blockquote class="blockquote">
-              <p class="mb-0">Opinión 1</p>
-              <footer class="blockquote-footer">Cliente 1</footer>
-            </blockquote>
-            <blockquote class="blockquote">
-              <p class="mb-0">Opinión 2</p>
-              <footer class="blockquote-footer">Cliente 2</footer>
-            </blockquote>
-        </div>
-    </div>
-    <form class="pt-3">
-        <p>Aquí se añadirán pestañas para los tres tipos de formularios</p>
-        <h4>¿Quieres trabajar con nosotros?</h4>
-        <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Introduzca su nombre">
-        </div>
-        <div class="form-group">
-            <label for="correo">Correo electrónico</label>
-            <input type="email" class="form-control" id="correo" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <label for="cv">Curriculum vitae</label>
-            <textarea class="form-control" id="cv" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-    <footer class="page-footer">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="#"> Empresa</a>
-          </div>
-    </footer>
 </div>
+<div class="row justify-content-center pt-3">
+    <div class="card col">
+      <img class="card-img-top" src="{{ asset('images/card.svg') }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Departamento 1</h5>
+        <p class="card-text">Descripción carta</p>
+        <a href="#" class="btn btn-primary">Ir</a>
+    </div>
+</div>
+<div class="card col">
+  <img class="card-img-top" src="{{ asset('images/card.svg') }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Departamento 2</h5>
+    <p class="card-text">Descripción carta</p>
+    <a href="#" class="btn btn-primary">Ir</a>
+</div>
+</div>
+<div class="card col">
+  <img class="card-img-top" src="{{ asset('images/card.svg') }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Departamento 3</h5>
+    <p class="card-text">Descripción carta</p>
+    <a href="#" class="btn btn-primary">Ir</a>
+</div>
+</div>
+</div>
+<div class="row pt-3">
+    <div class="col bg-secondary text-white">
+        <h4>Nuestros clientes piensan</h4>
+    </div>
+    <div class="col bg-white">
+        <blockquote class="blockquote">
+          <p class="mb-0">Opinión 1</p>
+          <footer class="blockquote-footer">Cliente 1</footer>
+      </blockquote>
+      <blockquote class="blockquote">
+          <p class="mb-0">Opinión 2</p>
+          <footer class="blockquote-footer">Cliente 2</footer>
+      </blockquote>
+  </div>
+</div>
+<form class="pt-3">
+    <p>Aquí se añadirán pestañas para los tres tipos de formularios</p>
+    <h4>¿Quieres trabajar con nosotros?</h4>
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Introduzca su nombre">
+    </div>
+    <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" class="form-control" id="correo" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="cv">Curriculum vitae</label>
+        <textarea class="form-control" id="cv" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+<footer class="page-footer">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="#"> Empresa</a>
+    </div>
+</footer>
 {% endblock %}

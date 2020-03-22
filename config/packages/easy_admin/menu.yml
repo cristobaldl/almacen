@@ -1,0 +1,5 @@
+easy_admin:
+    design:
+        menu:
+            - User
+            - { label: 'Inicio', icon: 'home', url: '/', rel: 'index' }

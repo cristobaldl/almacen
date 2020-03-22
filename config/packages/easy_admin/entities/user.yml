@@ -7,3 +7,4 @@ easy_admin:
                 fields:
                     - 'username'
                     - { property: 'password', type: 'password' }
+                    - { property: 'roles', type: 'collection' }
