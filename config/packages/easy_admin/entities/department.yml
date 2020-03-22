@@ -1,0 +1,4 @@
+easy_admin:
+    entities:
+        Department:
+            class: App\Entity\Department

@@ -2,4 +2,7 @@ easy_admin:
     design:
         menu:
             - User
+            - Department
+            - Event
+            - Edition
             - { label: 'Inicio', icon: 'home', url: '/', rel: 'index' }
